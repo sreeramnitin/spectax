@@ -1,0 +1,78 @@
+<html>
+<head>
+	<title>Spectax9</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<link href="/static/style.css" rel="stylesheet" type="text/css">
+	<script src="/static/input_validation.js" type="text/javascript"></script>
+</head>
+
+<body>
+<div id="header_div">
+{% include "header.html"%}
+</div>
+<div id="header_dummy_div"></div>
+<div id="index_wrapper" align="center">
+
+<div id="index_welcome">
+	<h1>Welcome To Spectax9!</h1>
+	<h2>Under Construction! Please visit back later</h2>
+</div>
+<div id="index_content" class="duo">
+
+	<div id="index_left" class="left">
+		<h3><i>A Social Gaming Portal</i></h3>
+		<h4><i>Spectax9</i> allows you to upload your own homemade java/flash/html games for everyone to play!</h4>
+		<h5>It is but a Preview of the future development of Cloud Gaming</h5>
+	</div>
+	<div id="index_right" class="right">
+		<div id="index_register" class="box">
+			<div class="box_top">
+			Sign Up Now!
+			</div>
+			<div class="box_content">
+				<form name=registerform method="POST" action="/register/" onsubmit="return rvalidate(this,'form')">
+					
+					<input class="input" type="text" name="userid" style=""
+					value="Enter Your Email To Register"
+					onfocus="focusblur(this,'email');"
+					onblur="focusblur(this,'email');"
+					onchange="rvalidate(this,'email');"
+					size="25">
+					<input class="input" type="text" name="name"
+					value="Enter Your Full Name"
+					onfocus="focusblur(this,'name')"
+					onblur="focusblur(this,'name')"
+					onchange="rvalidate(this,'name');"
+					size="25">
+					<input class="input" type="text" name="pass" id="pass"
+					value="Enter A Password"
+					onfocus="focusblur(this,'pass')"
+					onblur="focusblur(this,'pass')"
+					onchange="rvalidate(this,'pass'); rvalidate(document.getElementById('rpass'),'rpass');"
+					size="25">
+					<input class="input" type="text" name="rpass" id="rpass"
+					value="Re-Enter Password"
+					onfocus="focusblur(this,'rpass')"
+					onblur="focusblur(this,'rpass')"
+					onchange="rvalidate(this,'rpass'); rvalidate(document.getElementById('pass'),'pass');"
+					size="25">
+					
+					<br>
+					<button type="submit">Register!</button>
+					
+					{% if error_message %}<div style="font-size: 19px; color: red; font-family: calibri; clear: both;"><p><strong>{{ error_message }}</strong></p></div>{% endif %}
+
+
+					
+				</form>
+			</div>
+		</div>
+	</div>
+	<br style="clear: both;">
+	
+</div>
+	
+</div>
+<div id="footer_dummy_div"></div>
+</body>
+</html>

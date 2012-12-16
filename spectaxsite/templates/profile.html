@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Spectax9</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<link href="/static/style.css" rel="stylesheet" type="text/css">
+	<script src="/static/input_validation.js" type="text/javascript"></script>
+</head>
+
+<body>
+<div id="header_div">
+{%include "header_session.html"%}
+</div>
+<div id="header_dummy_div"></div>
+<div id="index_wrapper" align="center">
+
+<div id="index_welcome">
+	<h1>Welcome To Spectax9!</h1>
+	<h2>Under Construction! Please visit back later</h2>
+	<div id="index_register" class="box">
+			<div class="box_top">
+			Profile
+			</div>
+			<div class="box_content">
+				<div style="font-size: 19px; color: red; font-family: calibri; clear: both;">
+					{%if update_msg%}
+						{{update_msg}}
+					{%endif%}
+					</div>
+				<form name=registerform method="POST" action="/update/{{id}}/{{sid}}/" onsubmit="return uvalidate(this,'form')">
+						Hello {{name}}!
+						<br>
+						<input class="input" type="text" name="name" id="name"
+						value="Enter Your Full Name To Change"
+						onfocus="focusblur(this,'uname');"
+						onblur="focusblur(this,'uname');"
+						onchange="uvalidate(this,'name');"
+						size="25">
+						<br>
+						you have logged in as {{email}}
+						<br>
+						<br>
+						To Change Your Password:
+						<br>
+						<input class="input" type="text" name="pass" id="pass"
+						value="Enter A New Password"
+						onfocus="focusblur(this,'upass');"
+						onblur="focusblur(this,'upass');"
+						onchange="uvalidate(this,'pass'); uvalidate(document.getElementById('rpass'),'rpass');"
+						size="25"> 
+						<br>
+						<input class="input" type="text" name="rpass" id="rpass"
+						value="Re-Enter New Password"
+						onfocus="focusblur(this,'urpass');"
+						onblur="focusblur(this,'urpass');"
+						onchange="uvalidate(this,'rpass'); uvalidate(document.getElementById('pass'),'pass');"
+						size="25">
+						<br>
+						<button type="submit">Update!</button>
+					<div style="font-size: 19px; color: red; font-family: calibri; clear: both;">
+					</div>
+				</form>
+			</div>
+		</div>
+			
+</div>
+</div>
+<div id="footer_dummy_div"></div>
+</body>
+</html>

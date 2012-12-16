@@ -1,0 +1,50 @@
+
+<header id="page_header">
+		<div id="logo" class="left">
+			<a href="">
+				<img src="/static/images/spectax9logo.png" alt="Spectax9 Logo" width="265px" height="100px">
+			</a>
+		</div>
+		<div id="login" class="right">
+			<div style="font-size: 20px; color: #FFFFFF; padding: 10px 0px 5px 5px; font-family: calibri; margin-top: -10px;">
+			Member Login:
+			<span style="font-size: 19px; color: red; font-family: calibri;">
+			{%if login_error%}
+				{{login_error}}
+			{%endif%}
+			</span>
+			</div>
+			<div style=" margin-top: -15px;">	
+			<form name=loginform method="POST" action="/login/" onsubmit="return lvalidate(this,'form');" >
+				<input class="input" type="text" name="userid"
+					value="Email"
+					onfocus="focusblur(this,'lemail');"
+					onblur="focusblur(this,'lemail');"
+					onchange="lvalidate(this,'email');">
+				<input class="input_1" type="password" name="pass" value="Password"
+					onfocus="focusblur(this,'lpass')"
+					onblur="focusblur(this,'lpass')"
+					onchange="lvalidate(this,'pass');">
+				<button type="submit">Login</button>
+			</form>
+			</div>
+			<div style=" margin-top: -15px;">
+			<a href = "{{address}}"><img src = "/static/images/github.png" width="175px" height = "25px"/></a>
+			{%comment%}
+			<span style=" margin-left: 25px;">{%#include "twitter_login.html"%}</span>
+			<span style=" margin-left: 25px;">{%#include "facebook_login.html"%}</span>
+							{%endcomment%}
+			</div>
+		</div>
+		<br style="clear: both;">
+		<div id="footer">
+		<nav id="footer_nav">
+		<ul>
+			<li><a href="http://www.spectaxstudio.com">(c) 2012 Spectax Studio</a></li>
+			<li><a href="http://www.spectax9.com">Spectax9</a></li>
+			<li><a href="http://www.mabbu9.com">Mabbu9</a></li>
+			<li><a href="">Sonec9 (Comming Soon)</a></li>
+		</ul>		
+		</nav>
+	</div>
+</header>

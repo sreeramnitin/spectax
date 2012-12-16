@@ -1,0 +1,6 @@
+http://agiliq.com/dumps/django/docs.html
+
+RUNNING DJANGO ON GOOGLE APP ENGINE
+-----------------------------------
+
+https://developers.google.com/appengine/articles/django
